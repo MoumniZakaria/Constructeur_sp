@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -10,33 +9,64 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useTranslation } from "@/hooks/use-translation"
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 export function ContactSection() {
   const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
+  // Initialize EmailJS (you can also do this in a useEffect or at app level)
+  useEffect(() => {
+    emailjs.init("T2U9gpignInmK9iHN") // Your actual public key
+  }, [])
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      // EmailJS integration will be added here
-      // For now, simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      const formData = new FormData(e.target as HTMLFormElement)
       
+      // Create template parameters object
+      const templateParams = {
+        from_name: formData.get('name') as string,
+        from_email: formData.get('email') as string,
+        phone: formData.get('phone') as string,
+        message: formData.get('message') as string,
+        to_name: 'Ilmati Construcciones', // Your company name
+      }
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        'service_mk4a7tc', // Your service ID
+        'template_uiskggw', // Your template ID
+        templateParams
+      )
+
+      console.log('Email sent successfully:', response)
       setSubmitStatus("success")
       
       // Reset form
       const form = e.target as HTMLFormElement
       form.reset()
     } catch (error) {
+      console.error('❌ EMAILJS ERROR - Full error object:', error)
+      
+      // Log all error properties
+      if (error && typeof error === 'object') {
+        console.error('❌ Error keys:', Object.keys(error))
+        console.error('❌ Error status:', (error as any).status)
+        console.error('❌ Error text:', (error as any).text) 
+        console.error('❌ Error message:', (error as any).message)
+      }
+      
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
       
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus("idle"), 3000)
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     }
   }
 
@@ -81,27 +111,61 @@ export function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name">{t("contact.form.name")}</Label>
-                  <Input id="name" name="name" required className="mt-1 border border-solid border-black" />
+                  <Input 
+                    id="name" 
+                    name="name" 
+                    required 
+                    className="mt-1 border border-solid border-black"
+                    disabled={isSubmitting}
+                  />
                 </div>
 
                 <div>
                   <Label htmlFor="email">{t("contact.form.email")}</Label>
-                  <Input id="email" name="email" type="email" required className="mt-1 border border-solid border-black" />
+                  <Input 
+                    id="email" 
+                    name="email" 
+                    type="email" 
+                    required 
+                    className="mt-1 border border-solid border-black"
+                    disabled={isSubmitting}
+                  />
                 </div>
 
                 <div>
                   <Label htmlFor="phone">{t("contact.form.phone")}</Label>
-                  <Input id="phone" name="phone" type="tel" required className="mt-1 border border-solid border-black" />
+                  <Input 
+                    id="phone" 
+                    name="phone" 
+                    type="tel" 
+                    required 
+                    className="mt-1 border border-solid border-black"
+                    disabled={isSubmitting}
+                  />
                 </div>
 
                 <div>
                   <Label htmlFor="message">{t("contact.form.message")}</Label>
-                  <Textarea id="message" name="message" rows={4} required className="mt-1 border border-solid border-black" />
+                  <Textarea 
+                    id="message" 
+                    name="message" 
+                    rows={4} 
+                    required 
+                    className="mt-1 border border-solid border-black"
+                    disabled={isSubmitting}
+                  />
                 </div>
 
-                <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" disabled={isSubmitting}>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-secondary hover:bg-secondary/90" 
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? (
-                    t("contact.form.sending")
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      {t("contact.form.sending")}
+                    </>
                   ) : (
                     <>
                       <Send className="mr-2 h-4 w-4" />
@@ -111,11 +175,19 @@ export function ContactSection() {
                 </Button>
 
                 {submitStatus === "success" && (
-                  <p className="text-green-600 text-center font-medium">{t("contact.form.success")}</p>
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+                    <p className="text-green-800 text-center font-medium">
+                      ✅ {t("contact.form.success")}
+                    </p>
+                  </div>
                 )}
 
                 {submitStatus === "error" && (
-                  <p className="text-red-600 text-center font-medium">{t("contact.form.error")}</p>
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+                    <p className="text-red-800 text-center font-medium">
+                      ❌ {t("contact.form.error")}
+                    </p>
+                  </div>
                 )}
               </form>
             </CardContent>
