@@ -111,29 +111,49 @@ export function ServicesSection() {
       description: "Proyectos de construcción con técnicas avanzadas"
     },
     {
-      url: "https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      title: "Trabajos Eléctricos",
-      description: "Instalaciones eléctricas profesionales y seguras"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      title: "Fontanería Experta",
-      description: "Soluciones completas en sistemas de agua"
-    },
-    {
       url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Carpintería Artesanal",
       description: "Trabajos en madera de alta calidad"
     },
     {
-      url: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      title: "Pintura Profesional",
-      description: "Acabados perfectos para tu hogar"
-    },
-    {
       url: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Jardinería y Paisajismo",
       description: "Espacios verdes diseñados con amor"
+    },
+    {
+      url: "/photo1.jpg",
+      title: "Ilmati Construcciones",
+      description: "Proyectos de construcción profesional"
+    },
+    {
+      url: "/photo2.png",
+      title: "Ilmati Construcciones",
+      description: "Trabajos de alta calidad"
+    },
+    {
+      url: "/photo3.png",
+      title: "Ilmati Construcciones",
+      description: "Experiencia y profesionalidad"
+    },
+    {
+      url: "/photo4.png",
+      title: "Ilmati Construcciones",
+      description: "Construcción moderna y eficiente"
+    },
+    {
+      url: "/photo5.png",
+      title: "Ilmati Construcciones",
+      description: "Soluciones integrales de construcción"
+    },
+    {
+      url: "/photo6.png",
+      title: "Ilmati Construcciones",
+      description: "Acabados de primera calidad"
+    },
+    {
+      url: "/photo7.png",
+      title: "Ilmati Construcciones",
+      description: "Proyectos residenciales y comerciales"
     }
   ]
 
