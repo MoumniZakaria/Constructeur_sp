@@ -7,11 +7,16 @@ import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
 export function Footer() {
   const { t } = useTranslation()
 
+  // Full list of services in English (updated)
   const services = [
-    "Fontanero",
-    "Electricista", 
-    "Albañil",
-    "Pintor",
+    "Handyman",
+    "Construction Worker",
+    "Laborer",
+    "Skilled Worker",
+    "Welder",
+    "Plumber",
+    "Bricklayer",
+    "Electrician",
   ]
 
   const company = [t("nav.about"), t("nav.reviews"), t("nav.contact")]
@@ -23,9 +28,9 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/ilmati-logo.png" 
-                alt="ILMATI Construcciones" 
+              <img
+                src="/ilmati-logo.png"
+                alt="ILMATI Construcciones"
                 className="h-8 w-auto brightness-0 invert"
               />
               <h3 className="text-xl font-bold">ILMATI</h3>
@@ -54,7 +59,7 @@ export function Footer() {
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
-                    href="#services"
+                    href={`#${service.toLowerCase().replace(/\s+/g, "-")}`}
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {service}
@@ -88,7 +93,7 @@ export function Footer() {
               <p>Hiendelaencina, Guadalajara</p>
               <p>+34 643 516 352</p>
               <p>contacto@ilmati.es</p>
-              <p>Lun-Sáb: 8:00 AM - 6:00 PM</p>
+              <p>Mon-Sat: 8:00 AM - 6:00 PM</p>
             </div>
           </div>
         </div>
