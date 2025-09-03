@@ -84,18 +84,6 @@ export function ServicesSection() {
       color: "from-amber-500 to-amber-600"
     },
     {
-      icon: TreePine,
-      title: "Jardinero",
-      description: "Mantenimiento y cuidado de jardines y espacios verdes.",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      icon: Paintbrush,
-      title: "Pintor",
-      description: "Pintura interior y exterior de viviendas y edificios.",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
       icon: Zap,
       title: "Electricista",
       description: "Instalaciones eléctricas seguras y reparaciones.",
@@ -103,76 +91,81 @@ export function ServicesSection() {
     }
   ]
 
-  // Mock construction/work images
+  // Updated images with proper titles and descriptions based on file names
   const images = [
+    {
+      url: "/pool_before.png",
+      title: "Renovación de Piscina - Antes",
+      description: "Estado inicial del proyecto de renovación de piscina"
+    },
+    {
+      url: "/pool_after_2.png",
+      title: "Renovación de Piscina - Proceso",
+      description: "Trabajos en progreso de la renovación de piscina"
+    },
+    {
+      url: "/pool_after.png",
+      title: "Renovación de Piscina - Después",
+      description: "Resultado final de la renovación de piscina completada"
+    },
+    {
+      url: "/magasin_before.png",
+      title: "Reforma de Local Comercial - Antes",
+      description: "Estado inicial del local comercial antes de la reforma"
+    },
+    {
+      url: "/magasin_after_2.png",
+      title: "Reforma de Local Comercial - Proceso",
+      description: "Trabajos de reforma en progreso del local comercial"
+    },
+    {
+      url: "/magasin_after.png",
+      title: "Reforma de Local Comercial - Después",
+      description: "Local comercial completamente renovado y modernizado"
+    },
+    {
+      url: "/roof_before.png",
+      title: "Reparación de Tejado - Antes",
+      description: "Estado inicial del tejado antes de las reparaciones"
+    },
+    {
+      url: "/roof_after.png",
+      title: "Reparación de Tejado - Después",
+      description: "Tejado completamente reparado y restaurado"
+    },
+    {
+      url: "/wall_before.png",
+      title: "Reforma de Pared - Antes",
+      description: "Estado inicial de la pared antes de la reforma"
+    },
+    {
+      url: "/wall_after.png",
+      title: "Reforma de Pared - Después",
+      description: "Pared completamente renovada con acabados profesionales"
+    },
     {
       url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Construcción Moderna",
       description: "Proyectos de construcción con técnicas avanzadas"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      title: "Carpintería Artesanal",
-      description: "Trabajos en madera de alta calidad"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      title: "Jardinería y Paisajismo",
-      description: "Espacios verdes diseñados con amor"
-    },
-    {
-      url: "/photo1.jpg",
-      title: "Ilmati Construcciones",
-      description: "Proyectos de construcción profesional"
-    },
-    {
-      url: "/photo2.png",
-      title: "Ilmati Construcciones",
-      description: "Trabajos de alta calidad"
-    },
-    {
-      url: "/photo3.png",
-      title: "Ilmati Construcciones",
-      description: "Experiencia y profesionalidad"
-    },
-    {
-      url: "/photo4.png",
-      title: "Ilmati Construcciones",
-      description: "Construcción moderna y eficiente"
-    },
-    {
-      url: "/photo5.png",
-      title: "Ilmati Construcciones",
-      description: "Soluciones integrales de construcción"
-    },
-    {
-      url: "/photo6.png",
-      title: "Ilmati Construcciones",
-      description: "Acabados de primera calidad"
-    },
-    {
-      url: "/photo7.png",
-      title: "Ilmati Construcciones",
-      description: "Proyectos residenciales y comerciales"
     }
   ]
-
-  // Auto-advance services carousel
+  
+  // Auto-advance services carousel - slower speed
   useEffect(() => {
     if (!isServicesPaused) {
       const interval = setInterval(() => {
         setCurrentServiceIndex((prev) => (prev + 1) % services.length)
-      }, 3000)
+      }, 5000) // Increased from 3000 to 5000ms (5 seconds)
       return () => clearInterval(interval)
     }
   }, [isServicesPaused, services.length])
 
-  // Auto-advance images carousel
+  // Auto-advance images carousel - slower speed
   useEffect(() => {
     if (!isImagesPaused) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % images.length)
-      }, 4000)
+      }, 6000) // Increased from 4000 to 6000ms (6 seconds)
       return () => clearInterval(interval)
     }
   }, [isImagesPaused, images.length])
@@ -191,6 +184,12 @@ export function ServicesSection() {
 
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  // Handle image load error
+  const handleImageError = (e) => {
+    console.error('Image failed to load:', e.target.src)
+    // You could set a fallback image here
   }
 
   return (
@@ -226,8 +225,23 @@ export function ServicesSection() {
                 <button
                   onClick={() => setIsServicesPaused(!isServicesPaused)}
                   className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  aria-label={isServicesPaused ? "Reanudar carrusel de servicios" : "Pausar carrusel de servicios"}
                 >
                   {isServicesPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
+                </button>
+                <button
+                  onClick={prevService}
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  aria-label="Servicio anterior"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={nextService}
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  aria-label="Siguiente servicio"
+                >
+                  <ChevronRight className="h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -238,7 +252,7 @@ export function ServicesSection() {
                 const isActive = index === currentServiceIndex
                 return (
                   <div
-                    key={service.title}
+                    key={`${service.title}-${index}`}
                     className={`absolute inset-0 transition-all duration-800 ease-in-out transform ${
                       isActive
                         ? 'opacity-100 translate-x-0 scale-100'
@@ -289,6 +303,7 @@ export function ServicesSection() {
                       ? 'bg-gradient-to-r from-blue-500 to-purple-600 w-12'
                       : 'bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 w-2'
                   }`}
+                  aria-label={`Ver servicio ${index + 1}`}
                 />
               ))}
             </div>
@@ -302,18 +317,21 @@ export function ServicesSection() {
                 <button
                   onClick={() => setIsImagesPaused(!isImagesPaused)}
                   className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400"
+                  aria-label={isImagesPaused ? "Reanudar carrusel de imágenes" : "Pausar carrusel de imágenes"}
                 >
                   {isImagesPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
                 </button>
                 <button
                   onClick={prevImage}
                   className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400"
+                  aria-label="Imagen anterior"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
                 <button
                   onClick={nextImage}
                   className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400"
+                  aria-label="Siguiente imagen"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
@@ -323,7 +341,7 @@ export function ServicesSection() {
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl group">
               {images.map((image, index) => (
                 <div
-                  key={index}
+                  key={`${image.title}-${index}`}
                   className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
                     index === currentImageIndex
                       ? 'opacity-100 scale-100'
@@ -334,6 +352,8 @@ export function ServicesSection() {
                     src={image.url}
                     alt={image.title}
                     className="w-full h-full object-cover"
+                    onError={handleImageError}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -358,6 +378,7 @@ export function ServicesSection() {
                       ? 'bg-gradient-to-r from-purple-500 to-pink-600 w-12'
                       : 'bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 w-2'
                   }`}
+                  aria-label={`Ver imagen ${index + 1}`}
                 />
               ))}
             </div>
