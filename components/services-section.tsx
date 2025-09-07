@@ -135,14 +135,14 @@ export function ServicesSection() {
     },
     {
       url: "/wall_before.png",
-      title: "Reforma de Pared - Antes",
-      description: "Estado inicial de la pared antes de la reforma"
+      title: "Reforma de Pared en Pladur - Antes",
+      description: "Estado inicial de la pared antes de la reforma con pladur"
     },
     {
       url: "/wall_after.png",
-      title: "Reforma de Pared - Después",
-      description: "Pared completamente renovada con acabados profesionales"
-    },
+      title: "Reforma de Pared en Pladur - Después",
+      description: "Pared completamente renovada con acabados profesionales en pladur"
+    },    
     {
       url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Construcción Moderna",

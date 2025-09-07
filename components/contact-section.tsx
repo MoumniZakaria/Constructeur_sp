@@ -84,7 +84,7 @@ export function ContactSection() {
     {
       icon: Mail,
       title: t("contact.info.email"),
-      value: "contacto@ilmati.es",
+      value: "ilmaticonstructiones@gmail.com",
     },
     {
       icon: Clock,

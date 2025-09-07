@@ -10,9 +10,9 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: "Transforma Tu Espacio con Artesanía de Calidad",
+      title: "Pladur, Construcciones, Trasteros y Montajes en Toda España",
       subtitle:
-        "Servicios profesionales de construcción y renovación en España. Desde remodelaciones de cocina hasta renovaciones completas del hogar, hacemos realidad tu visión.",
+        "Especialistas en tabiquerías, techos y murales en pladur, construcciones, divisiones y montajes de trasteros y magazín, así como la construcción de suelos y techos con cemento armado (libiton). Además, ofrecemos otros servicios a medida, con calidad y acabados impecables.",
       phone: "Llamar Ahora",
     },
     // Services
@@ -52,7 +52,7 @@ export const translations = {
       info: {
         address: "C. Occidente, 19242 Hiendelaencina, Guadalajara, España",
         phone: "+34 643 516 352",
-        email: "contacto@ilmati.es",
+        email: "ilmaticonstructiones@gmail.com",
         hours: "Lun-Sáb: 8:00 AM - 6:00 PM",
       },
     },

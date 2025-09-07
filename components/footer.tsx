@@ -92,7 +92,7 @@ export function Footer() {
             <div className="space-y-2 text-primary-foreground/80">
               <p>Hiendelaencina, Guadalajara</p>
               <p>+34 643 516 352</p>
-              <p>contacto@ilmati.es</p>
+              <p>ilmaticonstructiones@gmail.com</p>
               <p>Mon-Sat: 8:00 AM - 6:00 PM</p>
             </div>
           </div>
