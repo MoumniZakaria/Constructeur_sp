@@ -10,9 +10,9 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: "Pladur, Construcciones, Trasteros y Montajes en Toda España",
+      title: "Fabricación e instalación de trasteros de Pladur a medida",
       subtitle:
-        "Especialistas en tabiquerías, techos y murales en pladur, construcciones, divisiones y montajes de trasteros y magazín, así como la construcción de suelos y techos con cemento armado (libiton). Además, ofrecemos otros servicios a medida, con calidad y acabados impecables.",
+        "Transformamos espacios vacíos en soluciones de almacenamiento seguras, rentables y eficientes. Nuestros trasteros personalizados en pladur y metal aprovechan cada rincón para crear espacios prácticos que crecen contigo.",
       phone: "Llamar Ahora",
     },
     // Services
