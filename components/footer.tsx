@@ -37,16 +37,16 @@ export function Footer() {
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">{t("footer.description")}</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="http://facebook.com/ilmaticonstructiones/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="http://instagram.com/ilmaticonstructiones/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="http://twitter.com/ilmaticonstructiones/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="http://linkedin.com/company/ilmaticonstructiones/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </div>

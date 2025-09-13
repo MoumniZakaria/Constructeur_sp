@@ -224,21 +224,21 @@ export function ServicesSection() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setIsServicesPaused(!isServicesPaused)}
-                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:cursor-pointer hover:bg-gray-300"
                   aria-label={isServicesPaused ? "Reanudar carrusel de servicios" : "Pausar carrusel de servicios"}
                 >
                   {isServicesPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
                 </button>
                 <button
                   onClick={prevService}
-                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:cursor-pointer hover:bg-gray-300"
                   aria-label="Servicio anterior"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
                 <button
                   onClick={nextService}
-                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:cursor-pointer hover:bg-gray-300"
                   aria-label="Siguiente servicio"
                 >
                   <ChevronRight className="h-5 w-5" />
@@ -316,21 +316,21 @@ export function ServicesSection() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setIsImagesPaused(!isImagesPaused)}
-                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400"
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:cursor-pointer hover:bg-gray-300"
                   aria-label={isImagesPaused ? "Reanudar carrusel de imágenes" : "Pausar carrusel de imágenes"}
                 >
                   {isImagesPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
                 </button>
                 <button
                   onClick={prevImage}
-                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400"
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:cursor-pointer hover:bg-gray-300"
                   aria-label="Imagen anterior"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400"
+                  className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:cursor-pointer hover:bg-gray-300"
                   aria-label="Siguiente imagen"
                 >
                   <ChevronRight className="h-5 w-5" />
